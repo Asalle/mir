@@ -50,7 +50,7 @@ auto mg::kms::CPUAddressableDisplayAllocator::supported_formats() const
 -> std::vector<mg::DRMFormat>
 {
     // TODO: Pull out of DRM info
-    return {mg::DRMFormat{DRM_FORMAT_XRGB8888}, mg::DRMFormat{DRM_FORMAT_ARGB8888}};
+    return {mg::DRMFormat{DRM_FORMAT_ARGB8888}};
 }
 
 auto mg::kms::CPUAddressableDisplayAllocator::alloc_fb(DRMFormat format) -> std::unique_ptr<MappableFB>
