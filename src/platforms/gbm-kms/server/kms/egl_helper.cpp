@@ -229,6 +229,10 @@ bool mgmh::EGLHelper::release_current() const
 
 auto mgmh::EGLHelper::egl_display_for_gbm_device(struct gbm_device* const device) -> EGLDisplay
 {
+    mir::log_warning("egl_display_for_gbm_device EGL_PLATFORM_GBM_KHR: %d \
+                     device: %d, nullptr\n", EGL_PLATFORM_GBM_KHR,
+                     static_cast<EGLNativeDisplayType>(device));
+
     auto const egl_display = platform_base.eglGetPlatformDisplay(
         EGL_PLATFORM_GBM_KHR,      // EGL_PLATFORM_GBM_MESA has the same value.
         static_cast<EGLNativeDisplayType>(device),
